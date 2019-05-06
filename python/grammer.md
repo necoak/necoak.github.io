@@ -378,3 +378,15 @@ enumerate(['a', 'b', 'c']) # [(0, 'a'), (1, 'b'), (2, 'c')]
 ## リスト内包表記
 * basic
   * `[i **2 for i in range(1, 10)]`
+
+
+# 関数
+## デコレータ
+* 関数の前に`@`をつけて書くものをデコレータという
+* デコレータをつけることにより、その関数
+
+* `@classmethod`
+* `@staticmethod`
+* `@property`
+* `@functools.lru_cache()`
+* `@app.route(path)`
