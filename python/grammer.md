@@ -390,3 +390,14 @@ enumerate(['a', 'b', 'c']) # [(0, 'a'), (1, 'b'), (2, 'c')]
 * `@property`
 * `@functools.lru_cache()`
 * `@app.route(path)`
+
+
+### range
+* range(startnum=0, endnum, stepval=1)
+  * 開始の値とステップ幅の値は省略可能である
+```python
+range
+```
+
+# デコレータ
+* ラップ関数を定義し、`@`を関数定義前にアノテーションっぽく書くことで、対称関数の実行前後に操作を追加できる
