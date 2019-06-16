@@ -36,3 +36,10 @@ print(str(time1.second))
 print(f'{time1:%H:%M:%S}')
 ```
 
+### tempfileモジュール
+* 一時ファイルやディレクトリの作成
+* https://docs.python.org/ja/3/library/tempfile.html
+
+```python
+with tempfile.NamedTemporaryFile(mode='w') as f
+```
