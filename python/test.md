@@ -59,3 +59,35 @@ class TestFoo(unittest.TestCase):
 ```
 ## mock.patch
 * 既存オブジェクトに対し置き換えしてテストすることができる
+
+```python
+import unittest
+from unittest import mock
+
+from expires import get_expires_at
+
+
+class TestExpiresAt(unittest.TestCase):
+    @mock.patch('expires.time')
+    def test__get_default(self, m):
+        m.return_value = 1470620400
+        actual_expired_time = get_expires_at()
+        self.assertEqual(actual_expired_time, 1470624000)
+
+    @mock.patch('expires.time')
+    def test__get(self, m):
+        m.return_value = 1470620400
+        actual_expired_time = get_expires_at(7200)
+        self.assertEqual(actual_expired_time, 1470627600)
+    
+    @mock.patch('expires.time', return_value=1470620401)
+    def test__get1(self, _):
+        actual_expired_time = get_expires_at(7200)
+        self.assertEqual(actual_expired_time, 1470627601)
+    
+    def test__get2(self):
+        with mock.patch('expires.time') as m:
+            m.return_value = 1470620402
+            actual_expired_time = get_expires_at(7200)
+            self.assertEqual(actual_expired_time, 1470627602)
+```
