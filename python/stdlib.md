@@ -41,5 +41,27 @@ print(f'{time1:%H:%M:%S}')
 * https://docs.python.org/ja/3/library/tempfile.html
 
 ```python
-with tempfile.NamedTemporaryFile(mode='w') as f
+import tempfile
+
+with tempfile.TemporaryFile(mode='w') as f:
+    print('hello tempfile, f)
+
+with tempfile.NamedTemporaryFile(mode='w') as f:
+    print('hello readable named tempfile', f)
 ```
+
+### argparse
+* コマンドライン引数
+* argparseチュートリアル
+  * https://docs.python.org/ja/3/howto/argparse.html#id1
+* argparse API
+  * https://docs.python.org/ja/3/library/argparse.html
+
+### docstring
+
+### logging
+
+### string
+* string.ascii_letters
+* string.digits
+* string.punctuation
