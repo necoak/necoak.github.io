@@ -57,11 +57,69 @@ with tempfile.NamedTemporaryFile(mode='w') as f:
 * argparse API
   * https://docs.python.org/ja/3/library/argparse.html
 
+```python
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='コマンドの説明文をかくことができます')
+    parser.add_argument('length', type=int, help='生成するパスワード長')
+    parser.add_argument('-c', '--complex', action='store_true',
+                        help='文字数字だけでなく記号も含める場合指定')
+    args = parser.parse_args()
+    print(password_generator(args.length, args.complex))
+```
+
 ### docstring
+TBD
 
 ### logging
+* プログラムのログを出力するライブラリ
+  * printfデバッグよりも出力レベルや出力先を変えられるので便利
+
+```python
+import logging
+
+loging.basicConfig(level=logging.INFO)
+
+def main():
+    logging.info('main started.')
+
+    try:
+        zerodivede = 2 / 0
+    except ZeroDivisionError as e:
+        logging.error('error occured: %s', e)
+
+    logging.info('main ended.')
+```
+
+* ロギング設定
+  * `logging.basicConfig(...)`
+     * level:  logging.CRITICAL, logging.ERROR, logging.WARN, logging.INFO, logging.DEBUG ..
+     * handlers
+       * loging.StreamHandler, logging.FileHandler
+       * setLevel:
+       * setFormatter:
+
+* example
+```python
+import logging
+stream_handler = logging.StreamHandler()
+stream_handler.setLevel(logging.INFO)
+stream_handler.setFormatter(logging.Formatter(
+    '%(pathname)s:%(lineno)s %(asctime)s %(name)s %(levelname)s %(message)s'
+    ))
+
+file_handler = logging.FileHandler('./logs/script.log')
+file_handler.setLevel(logging.ERROR)
+
+logging.basicConfig(
+    level=logging.INFO,
+    handlers=[stream_handler, file_handler])
+```
 
 ### string
 * string.ascii_letters
 * string.digits
 * string.punctuation
+
+### random
+* random.shuffle()
+* random.sample()
