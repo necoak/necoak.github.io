@@ -66,6 +66,13 @@ if __name__ == '__main__':
     args = parser.parse_args()
     print(password_generator(args.length, args.complex))
 ```
+* 使用の流れ
+  * 1. ArgumentParserインスタンスを作り
+  * 2. 引数をparserにaddし(parser.add_argument)
+  * 3. パースする(parser.parse_args)
+
+* オプション引数
+* 
 
 ### docstring
 TBD
@@ -77,7 +84,7 @@ TBD
 ```python
 import logging
 
-loging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO)
 
 def main():
     logging.info('main started.')
@@ -95,8 +102,8 @@ def main():
      * level:  logging.CRITICAL, logging.ERROR, logging.WARN, logging.INFO, logging.DEBUG ..
      * handlers
        * loging.StreamHandler, logging.FileHandler
-       * setLevel:
-       * setFormatter:
+       * setLevel: 
+       * setFormatter: 
 
 * example
 ```python
@@ -123,3 +130,6 @@ logging.basicConfig(
 ### random
 * random.shuffle()
 * random.sample()
+
+### io
+* io.StringIO
