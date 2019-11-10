@@ -43,3 +43,31 @@
 * 使い方
   * 対象ファイルを右クリック→Debug
 
+### 便利機能
+* インテンションアクション
+  * Alt + Enter
+
+* Postfix Completion
+  * 評価式を書いたあとに「.XXX」と書くと、式になってくれる
+    * "aaa".log → cosole.log("aaa")
+    * arg1 > arg2.if → if(arg1 > arg2)
+    * arg3.var → var arg3 = arg;
+
+* Expand Selection
+  * Ctrl + W
+  * 構文に従って選択範囲を広げることができる
+  * 逆向きは Ctrl + Shift + W
+
+* コードフォーマット
+  * Ctrl + Alt + L
+  * 対象ファイルをフォーマットする
+  * Preferences 
+
+* リネームリファクタリング
+  * Shift + F6
+
+## Java
+
+Inspection
+Ctrl + F1 : 警告の内容を表示
+→ Alt + Enter インテンショナクションで警告を解消、もしくは手で解消
